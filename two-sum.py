@@ -31,5 +31,14 @@ class TwoSum(object):
                     j += 1
             i += 1
 
+    def onePassTwoSum(self, nums, target):
+        resultPair = {}
+        for i, num in enumerate(nums):
+            diff = target - num
+            if diff not in resultPair:
+                resultPair[num] = i
+            else:
+                return [resultPair[diff], i]
+
 ts = TwoSum()
-print(ts.bruteForceTwoSum([2, 5, 7, 11], 9))
+print(ts.onePassTwoSum([2, 5, 7, 11], 9))
