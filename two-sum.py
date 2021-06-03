@@ -7,7 +7,7 @@ You can return the answer in any order.
 """
 
 class TwoSum(object):
-    def findTwoSum(self, nums, target):
+    def bruteForceTwoSum(self, nums, target):
         """
         :type nums: List[int]
         :type target: int
@@ -16,21 +16,20 @@ class TwoSum(object):
         resultPair = []
         
         # Loop over the nums array and add each item to see if their sum is target
-        i = j = 0
+        i = 0
         while i < len(nums):
-            print("i", i)
-            i += 1
             j = 0
             while j < len(nums):
-                print("j", j)
-                j += 1
-                # if nums[i] + nums[i+1] == target:
-                #     resultPair.append(nums[i])
-                #     resultPair.append(nums[i+1])
-                # if len(resultPair) == 2:
-                #     break
-        
-        return resultPair
+                if j != i:
+                    if nums[i] + nums[j] == target:
+                        resultPair.append(i)
+                        resultPair.append(j)
+                        return resultPair
+                    else:
+                        j += 1
+                else:
+                    j += 1
+            i += 1
 
 ts = TwoSum()
-print(ts.findTwoSum([2, 7, 11, 9], 9))
+print(ts.bruteForceTwoSum([2, 5, 7, 11], 9))
