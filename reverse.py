@@ -15,6 +15,3 @@ class ReverseA32BitInteger(object):
         rn = sign * int(str(abs(x))[::-1])
 
         return rn if -(2**31 - 1) < rn < (2**31 - 1) else 0
-
-ra32int = ReverseA32BitInteger()
-print(ra32int.reverseInteger(-9988))
