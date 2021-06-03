@@ -39,6 +39,4 @@ class TwoSum(object):
                 resultPair[num] = i
             else:
                 return [resultPair[diff], i]
-
-ts = TwoSum()
-print(ts.onePassTwoSum([2, 5, 7, 11], 9))
+                
